@@ -15,11 +15,11 @@ power_consumption <- read.table(text, sep=";", na.strings = "?", header = TRUE)
 # We're only interested in data from the dates 2007-02-01 and 2007-02-02
 power_consumption_subset <- subset(power_consumption, Date == "1/2/2007" | Date == "2/2/2007")
 
-# create a date/time variable
+# Create a date/time variable
 date_time <- paste(power_consumption_subset$Date, power_consumption_subset$Time)
 power_consumption_subset$DateTime <- strptime(date_time, "%d/%m/%Y %T") # %T == %H:%M:%S
 
-# Save plot as png
+# Making the plot
 png(filename="plot2.png", width=480, height=480, units ="px")
 plot(power_consumption_subset$DateTime, power_consumption_subset$Global_active_power,
   type = "l", xlab = "", ylab = "Global Active Power (kilowatts)")
