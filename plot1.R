@@ -17,7 +17,6 @@ power_consumption_subset <- subset(power_consumption, Date == "1/2/2007" | Date 
 
 # Save plot as png
 png(filename="plot1.png", width=480, height=480, units ="px")
-hist(
-  power_consumption_subset$Global_active_power, breaks=12, col="red",
+hist(power_consumption_subset$Global_active_power, breaks=12, col="red",
   xlab="Global Active Power (kilowatts)", main="Global Active Power")
 dev.off()
